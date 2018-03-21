@@ -1,0 +1,36 @@
+FROM mohaseeb/raspberrypi3-python-opencv
+#FROM drache93/resin-opencv
+
+
+#FROM resin/armv7hf-debian:latest
+#FROM resin/raspberrypi3-python:latest
+
+#FROM resin/rpi-raspbian:wheezy-2015-01-15
+
+# base-image for node on any machine using a template variable,
+# see more about dockerfile templates here: http://docs.resin.io/deployment/docker-templates/
+# and about resin base images here: http://docs.resin.io/runtime/resin-base-images/
+# Note the node:slim image doesn't have node-gyp
+#FROM resin/%%RESIN_MACHINE_NAME%%-node:6-slim
+
+# Defines our working directory in container
+WORKDIR /usr/src/
+
+# Enable systemd init system in container
+ENV INITSYSTEM on
+
+#RUN sudo apt-get update && sudo apt-get install gcc
+#&& sudo apt-get upgrade
+#&& sudo apt-get install gcc
+#sudo apt-get install libhdf5-dev
+
+#RUN wget ftp://ftp.fu-berlin.de/unix/languages/gcc/releases/gcc-5.4.0/gcc-5.4.0.tar.bz2 && \
+#	tar xf gcc-5.4.0.tar.bz2 && cd gcc-5.4.0 && contrib/download_prerequisites && \
+#	mkdir obj && cd obj && ../configure -v --enable-languages=c,c++ --with-cpu=cortex-a53 \
+#	--with-fpu=neon-fp-armv8 --with-float=hard --build=arm-linux-gnueabihf && sudo make install
+
+#RUN git clone https://ionita-sonah:sonahplusgitgleichlove@github.com/hippolyt/SoNah_Sensor.git /usr/src/opencv
+
+#RUN cd /usr/src/opencv && cmake . && make
+
+ADD test.py /test.py
