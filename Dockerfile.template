@@ -4,7 +4,8 @@
 #FROM resin/armv7hf-debian:latest
 #FROM resin/raspberrypi3-python:latest
 #FROM resin/rpi-raspbian:wheezy-2015-01-15
-FROM resin/raspberrypi3-debian:latest
+#FROM resin/raspberrypi3-debian:latest
+FROM resin/rpi-raspbian:latest
 
 # base-image for node on any machine using a template variable,
 # see more about dockerfile templates here: http://docs.resin.io/deployment/docker-templates/
