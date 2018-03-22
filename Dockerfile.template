@@ -29,7 +29,7 @@ ENV INITSYSTEM on
 #	mkdir obj && cd obj && ../configure -v --enable-languages=c,c++ --with-cpu=cortex-a53 \
 #	--with-fpu=neon-fp-armv8 --with-float=hard --build=arm-linux-gnueabihf && sudo make install
 
-#RUN git clone https://ionita-sonah:sonahplusgitgleichlove@github.com/hippolyt/SoNah_Sensor.git /usr/src/opencv
+RUN git clone https://ionita-sonah:sonahplusgitgleichlove@github.com/hippolyt/SoNah_Sensor.git /usr/src/opencv
 
 #RUN cd /usr/src/opencv && cmake . && make
 
