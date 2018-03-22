@@ -33,8 +33,8 @@ ENV INITSYSTEM on
 
 #RUN cd /usr/src/opencv && cmake . && make
 
-RUN git clone https://ionita-sonah:sonahplusgitgleichlove@github.com/hippolyt/sonahsensor-metrics-collector.git /usr/src/metrics-collector && cd metrics-collector && git checkout origin/unstable
+RUN git clone https://ionita-sonah:sonahplusgitgleichlove@github.com/hippolyt/sonahsensor-metrics-collector.git /usr/src/metrics-collector && cd metrics-collector && git checkout --track origin/unstable
 
-RUN git clone https://ionita-sonah:sonahplusgitgleichlove@github.com/hippolyt/sonahsensor-rescue-utils.git /usr/src/rescue-utils && cd rescue-utils && git checkout origin/unstable
+RUN git clone https://ionita-sonah:sonahplusgitgleichlove@github.com/hippolyt/sonahsensor-rescue-utils.git /usr/src/rescue-utils && cd rescue-utils && git checkout --track origin/unstable
 
 ADD test.py test.py
