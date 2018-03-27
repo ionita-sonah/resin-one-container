@@ -43,7 +43,7 @@ RUN git clone https://ionita-sonah:sonahplusgitgleichlove@github.com/hippolyt/So
 #    sudo echo 'export CPATH="/usr/include/hdf5/serial/"' >> /root/.bashrc && \
 #    export CPATH="/usr/include/hdf5/serial/" && sudo apt-get install libjsoncpp-dev
 
-RUN cd /usr/src/opencv && cmake . && make
+#RUN cd /usr/src/opencv && cmake . && make
 
 RUN git clone https://ionita-sonah:sonahplusgitgleichlove@github.com/hippolyt/sonahsensor-metrics-collector.git /usr/src/metrics-collector && cd metrics-collector && git checkout --track origin/unstable
 
