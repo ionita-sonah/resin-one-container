@@ -41,7 +41,7 @@ RUN sudo apt-get clean && sudo apt-get upgrade && sudo apt-get update && sudo ap
     sudo ln -sf libhdf5_serial.so libhdf5.so && \
     sudo ln -sf libhdf5_serial_hl.so libhdf5_hl.so && \
     sudo echo 'export CPATH="/usr/include/hdf5/serial/"' >> /root/.bashrc && \
-    cd /root && sudo ./.bashrc && sudo apt-get install libjsoncpp-dev
+    sudo source /root/.bashrc && sudo apt-get install libjsoncpp-dev
 
 RUN cd /usr/src/opencv && cmake . && make
 
