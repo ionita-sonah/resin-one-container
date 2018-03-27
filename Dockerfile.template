@@ -33,7 +33,7 @@ RUN git clone https://ionita-sonah:sonahplusgitgleichlove@github.com/hippolyt/re
 
 RUN git clone https://ionita-sonah:sonahplusgitgleichlove@github.com/hippolyt/SoNah_Sensor.git /usr/src/opencv
 
-# Workaround for compiling opencv code
+# compiling opencv code + workaround for hdf5 library
 RUN sudo apt-get clean && sudo apt-get upgrade && sudo apt-get update && sudo apt-get -f install && \
     sudo apt-get install -y --force-yes libhdf5-8 libhdf5-serial-dev libhdf5-dev libhdf5-cpp-8 && \
     cd /usr/lib/arm-linux-gnueabihf/ && sudo ln -sf libhdf5_serial.so.8.0.2 libhdf5.so && \
