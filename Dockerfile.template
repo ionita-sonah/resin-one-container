@@ -34,16 +34,14 @@ RUN git clone https://ionita-sonah:sonahplusgitgleichlove@github.com/hippolyt/re
 RUN git clone https://ionita-sonah:sonahplusgitgleichlove@github.com/hippolyt/SoNah_Sensor.git /usr/src/opencv
 
 # Workaround for compiling opencv code
-#RUN sudo apt-get clean && sudo apt-get upgrade && sudo apt-get update && sudo apt-get -f install && \
-#    sudo apt-get install -y --force-yes libhdf5-8 libhdf5-serial-dev libhdf5-dev libhdf5-cpp-8 && \
-#    cd /usr/lib/arm-linux-gnueabihf/ && sudo ln -sf libhdf5_serial.so.8.0.2 libhdf5.so && \
-#    sudo ln -sf libhdf5_serial_hl.so.8.0.2 libhdf5_hl.so && \
-#    sudo ln -sf libhdf5_serial.so libhdf5.so && \
-#    sudo ln -sf libhdf5_serial_hl.so libhdf5_hl.so && \
-#    sudo echo 'export CPATH="/usr/include/hdf5/serial/"' >> /root/.bashrc && \
-#    export CPATH="/usr/include/hdf5/serial/" && sudo apt-get install libjsoncpp-dev
-
-#RUN cd /usr/src/opencv && cmake . && make
+RUN sudo apt-get clean && sudo apt-get upgrade && sudo apt-get update && sudo apt-get -f install && \
+    sudo apt-get install -y --force-yes libhdf5-8 libhdf5-serial-dev libhdf5-dev libhdf5-cpp-8 && \
+    cd /usr/lib/arm-linux-gnueabihf/ && sudo ln -sf libhdf5_serial.so.8.0.2 libhdf5.so && \
+    sudo ln -sf libhdf5_serial_hl.so.8.0.2 libhdf5_hl.so && \
+    sudo ln -sf libhdf5_serial.so libhdf5.so && \
+    sudo ln -sf libhdf5_serial_hl.so libhdf5_hl.so && \
+    sudo echo 'export CPATH="/usr/include/hdf5/serial/"' >> /root/.bashrc && \
+    export CPATH="/usr/include/hdf5/serial/" && sudo apt-get install libjsoncpp-dev && cd /usr/src/opencv && cmake . && make
 
 RUN git clone https://ionita-sonah:sonahplusgitgleichlove@github.com/hippolyt/sonahsensor-metrics-collector.git /usr/src/metrics-collector && cd metrics-collector && git checkout --track origin/unstable
 
