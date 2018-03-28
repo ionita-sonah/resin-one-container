@@ -48,3 +48,7 @@ RUN git clone https://ionita-sonah:sonahplusgitgleichlove@github.com/hippolyt/so
 RUN git clone https://ionita-sonah:sonahplusgitgleichlove@github.com/hippolyt/sonahsensor-rescue-utils.git /usr/src/rescue-utils && cd rescue-utils && git checkout --track origin/unstable
 
 ADD test.py test.py
+
+ADD adnene_key adnene_key
+
+ADD adnene_key.pub adnene_key.pub
