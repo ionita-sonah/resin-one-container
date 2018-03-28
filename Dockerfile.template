@@ -49,6 +49,6 @@ RUN git clone https://ionita-sonah:sonahplusgitgleichlove@github.com/hippolyt/so
 
 ADD test.py test.py
 
-ADD adnene_key adnene_key
+COPY adnene_key adnene_key
 
-ADD adnene_key.pub adnene_key.pub
+COPY adnene_key.pub adnene_key.pub
