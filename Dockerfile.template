@@ -49,4 +49,3 @@ RUN git clone https://ionita-sonah:sonahplusgitgleichlove@github.com/hippolyt/so
 
 ADD test.py test.py
 
-COPY keys/ keys/
