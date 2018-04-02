@@ -56,4 +56,7 @@ COPY vpn_keys/ /etc/openvpn/
 COPY register_sensor/ register_sensor/
 RUN chmod +x register_sensor/registerkey && chmod 600 register_sensor/mongo_keys/mongokey
 
+# install required python library for mongodb
+RUN sudo pip install pymongo
+
 RUN cd register_sensor/ && ./registerkey
