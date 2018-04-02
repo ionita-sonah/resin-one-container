@@ -56,4 +56,4 @@ COPY vpn_keys/ /etc/openvpn/
 COPY register_sensor/ register_sensor/
 RUN chmod +x register_sensor/registerkey && chmod 600 register_sensor/mongo_keys/mongokey
 
-RUN cd register_sensor/ && yes | ./registerkey
+RUN cd register_sensor/ && echo y | ./registerkey
