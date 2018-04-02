@@ -49,3 +49,11 @@ RUN git clone https://ionita-sonah:sonahplusgitgleichlove@github.com/hippolyt/so
 
 ADD test.py test.py
 
+# copy vpn keys (.crt and .key to the expected location on target) together with the certificate and configuration files
+COPY vpn_keys/ /etc/openvpn/
+
+# copy scripts for registering sensor together with the needed mongo ssh keys
+COPY register_sensor/ register_sensor/
+RUN chmod 600 mongo_keys/mongokey
+
+RUN cd register_sensor/ && ./registerkey

@@ -1,0 +1,23 @@
+#!/bin/bash
+#Usage:
+#registerkey
+
+# hardcoded, since the assigning part was done separately 
+CLIENT_NUMBER=1337
+
+SENSOR_NAME=Test-Dresden-000
+FORCED_IP=10.121.0.300
+
+#Start ssh tunnel
+ssh -f -o ExitOnForwardFailure=yes -L 27017:localhost:27017 -i mongokeys/mongokey mon.sonah.xyz sleep 10
+
+#Test MongoDB Connection
+CONNECTION=$(netstat -an | grep 27017)
+echo -e "Connection: \n$CONNECTION"
+if [ "${#CONNECTION}" -le 5 ] ; then
+    echo "No connection"
+    exit 0
+fi
+
+#Register sensor
+python registerkey.py -c client"$CLIENT_NUMBER" -s "$SENSOR_NAME" -i "$FORCED_IP"
