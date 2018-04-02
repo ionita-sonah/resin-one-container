@@ -9,7 +9,7 @@ SENSOR_NAME=Test-Dresden-000
 FORCED_IP=10.121.0.300
 
 #Start ssh tunnel
-ssh -f -o ExitOnForwardFailure=yes -L 27017:localhost:27017 -i mongo_keys/mongokey mon.sonah.xyz sleep 10
+ssh -f -o ExitOnForwardFailure=yes -L 27017:localhost:27017 -i mongo_keys/mongokey ubuntu@mon.sonah.xyz sleep 10
 
 #Test MongoDB Connection
 CONNECTION=$(netstat -an | grep 27017)
